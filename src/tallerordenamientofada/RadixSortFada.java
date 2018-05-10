@@ -28,9 +28,9 @@ class RadixSortFada {
 	// the digit represented by exp.
 	static void countSort(int arr[], int n, int exp)
 	{
-//             long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
-//             TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
-//        
+             long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+             TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+        
 		int output[] = new int[n]; // output array
 		int i;
 		int count[] = new int[10];
@@ -57,10 +57,10 @@ class RadixSortFada {
 		for (i = 0; i < n; i++){
 			arr[i] = output[i];
                 }
-//                 TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
-//         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
-//         System.out.println(" Tiempo de ejecución CountSort en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
-//          
+                 TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+         System.out.println(" Tiempo de ejecución CountSort en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+          
 	}
 
 	// The main function to that sorts arr[] of size n using
@@ -93,7 +93,7 @@ class RadixSortFada {
         
 		for (int i=0; i<n; i++)
 			System.out.print(arr[i]+" ");
-                
+             System.out.println();   
          TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
          tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
          System.out.println(" Tiempo de ejecución RadixSortprint en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
