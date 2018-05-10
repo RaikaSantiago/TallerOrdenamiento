@@ -1,12 +1,12 @@
 package tallerordenamientofada;
 
-// RadixSortFada sort Java implementation
+// RadixSortFada 
 import java.io.*;
 import java.util.*;
 
 class RadixSortFada {
     
-	// A utility function to get maximum value in arr[]
+	// Una función de utilidad para obtener el valor máximo en arr []
 	static int getMax(int arr[], int n)
 	{
             long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
@@ -24,36 +24,36 @@ class RadixSortFada {
 		return mx;
 	}
 
-	// A function to do counting sort of arr[] according to
-	// the digit represented by exp.
+	// Una función para hacer el conteo tipo de arr [] según
+	// el dígito representado por exp
 	static void countSort(int arr[], int n, int exp)
 	{
              long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
              TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
         
-		int output[] = new int[n]; // output array
+		int output[] = new int[n]; // matriz de salida
 		int i;
 		int count[] = new int[10];
 		Arrays.fill(count,0);
 
-		// Store count of occurrences in count[]
+		// Almacenar el recuento de apariciones en el recuento []
 		for (i = 0; i < n; i++){
 			count[ (arr[i]/exp)%10 ]++;
                 }
-		// Change count[i] so that count[i] now contains
-		// actual position of this digit in output[]
+		// Cambie la cuenta [i] de modo que la cuenta [i] ahora contenga
+		// posición real de este dígito en la salida []
 		for (i = 1; i < 10; i++){
 			count[i] += count[i - 1];
                 }
-		// Build the output array
+		// Construye la matriz de salida
 		for (i = n - 1; i >= 0; i--)
 		{
 			output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];
 			count[ (arr[i]/exp)%10 ]--;
 		}
 
-		// Copy the output array to arr[], so that arr[] now
-		// contains sorted numbers according to curent digit
+		// Copia la matriz de salida a arr [], para que arr [] ahora
+		// contiene números ordenados de acuerdo con el dígito actual
 		for (i = 0; i < n; i++){
 			arr[i] = output[i];
                 }
@@ -63,19 +63,19 @@ class RadixSortFada {
           
 	}
 
-	// The main function to that sorts arr[] of size n using
+	// La función principal para eso ordena arr [] de tamaño n usando
 	// RadixSortFada Sort
 	static void radixsort(int arr[], int n)
 	{
             long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
     TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
         
-		// Find the maximum number to know number of digits
+		// Encuentra el número máximo para saber la cantidad de dígitos
 		int m = getMax(arr, n);
 
-		// Do counting sort for every digit. Note that instead
-		// of passing digit number, exp is passed. exp is 10^i
-		// where i is current digit number
+		// Haga el conteo ordenado para cada dígito. Tenga en cuenta que en cambio
+		// de pasar el número de dígito, exp se pasa. exp es 10 ^ i
+		// donde esta el número de dígito actual
 		for (int exp = 1; m/exp > 0; exp *= 10)
 			countSort(arr, n, exp);
                 
@@ -85,7 +85,7 @@ class RadixSortFada {
           
 	}
 
-	// A utility function to print an array
+	// Una función de utilidad para imprimir una matriz
 	static void print(int arr[], int n)
 	{
             long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
