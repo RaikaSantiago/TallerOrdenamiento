@@ -1,6 +1,7 @@
 
 package tallerordenamientofada;
 
+import java.util.Random;
 import java.util.Scanner;
 import static tallerordenamientofada.RadixSortFada.radixsort;
 
@@ -14,6 +15,14 @@ public class TallerOrdenamientoFada {
     
     public static void main(String[] args) {
         
+        
+         Random rand = new Random();
+
+            int  x = 10;
+            int j;
+            for(j=0; j<x; j++){
+            System.out.print(rand.nextInt(999999999));
+        }
 
      //------------------------------------- RadixSort------------------------------------------   
       System.out.println("-------------------RadixSort---------------------------"); 
